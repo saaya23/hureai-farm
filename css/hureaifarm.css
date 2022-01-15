@@ -1,0 +1,403 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing:border-box;
+  color:black;
+  font-weight: normal;
+}
+body{
+  font-family:小塚ゴシック Pr6N R;
+  width:100%;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+/* ここからtop */
+#top{
+  position: relative;
+  background-color: #fff09a;
+}
+.top_cont{
+  vertical-align:bottom;
+  width:100%;
+}
+.top_cont img{
+  width:100%;
+  padding:3% 5% 0% 5%;
+}
+.top_logo{
+  z-index: 1;
+  position: absolute;
+  top:0%;
+  left:0%;
+  width:18%;
+}
+.logo{
+  position:absolute;
+  top:5%;
+  left:2%;
+  width:10%;
+  height:27%;
+  z-index: 2;
+}
+.access_map{
+  position: absolute;
+  top:12%;
+  right:6.5%;
+  width:3%;
+}
+.twitter{
+  position: absolute;
+  top:23%;
+  right:6.5%;
+  width:3%;
+}
+.shop{
+  position: absolute;
+  top:34%;
+  right:6.5%;
+  width:3%;
+}
+
+
+/* nav */
+.navigation{
+  position: relative;
+  width:100%;
+}
+.yellow{
+  width:100%;
+  height:10%;
+}
+.icons{
+  position: absolute;
+  top:0%;
+  width:100%;
+  height:80%;
+}
+.icon{
+  float:left;
+  width:25%;
+  display: flex;
+  justify-content: center;
+}
+.icon a{
+  display: inline-block;
+  width:80%;
+}
+
+.icon img{
+  width:80%;
+  margin-left: 10%;
+  margin-top: 3%;
+}
+
+.icon::before{
+  content: "";
+  position: absolute;
+  left:25%;
+  height:70%;
+  width:1%;
+  background-color: orange;
+  transform:translateY(20%);
+}
+.merch::before{
+  content: "";
+  position: absolute;
+  left:50%;
+  height:70%;
+  width:1%;
+  background-color: orange;
+  transform:translateY(20%);
+}
+.photo::before{
+  content: "";
+  position: absolute;
+  left:75%;
+  height:70%;
+  width:1%;
+  background-color: orange;
+  transform:translateY(20%);
+}
+
+/* main */
+.main_contents{
+  margin:5% 5%;
+}
+.about_farm{
+  position: relative;
+  width:100%;
+}
+.about_farm img{
+  width:60%;
+}
+
+  /* 牧場について　最大PC向け */
+@media screen and (min-width:1400px) and (max-width:1920px){
+  .about_farm h1{
+    font-weight: normal;
+    position: absolute;
+    top:70%;
+    left:70%;
+    background: linear-gradient(transparent 50%, #fff09a 50%);
+    color:black;
+    font-size: 48px;
+    z-index: 10;
+  }
+  .about_farm h1::before{
+    content: "";
+    width:0%;
+    background: linear-gradient(transparent 50%,#fff09a 50%);
+    z-index: -1;
+    transition: .2s;
+  }
+  .about_farm h1:hover{
+    background: linear-gradient(transparent 50%,#ffa452 50%);
+  }
+.about_farm h1:hover::before{
+  width:100%;
+}
+
+  .about_farm p{
+    position: absolute;
+    top:10%;
+    right:0%;
+    background-color:rgba(230,230,230,0.7);
+    padding:3%;
+    font-size:28px;
+  }
+}
+
+  /* 牧場について　普通サイズPC向け */
+@media screen and (min-width:769px) and (max-width:1399px){
+  .about_farm h1{
+    font-weight: normal;
+    position: absolute;
+    top:70%;
+    left:70%;
+    font-size:32px;
+    background: linear-gradient(transparent 50%, #fff09a 50%);
+  }
+  .about_farm p{
+    position: absolute;
+    top:10%;
+    right:0%;
+    background-color:rgba(230,230,230,0.7);
+    padding:3%;
+    font-size:14px;
+  }
+}
+
+  /* 牧場について　スマホサイズ向け */
+@media screen and (max-width:768px){
+  .about_farm h1{
+    font-weight: normal;
+    position: absolute;
+    top:70%;
+    left:70%;
+    background: linear-gradient(transparent 50%, #fff09a 50%);
+    color:black;
+    font-size:16px;
+  }
+  .about_farm p{
+    position: absolute;
+    top:10%;
+    right:0%;
+    background-color:rgba(230,230,230,0.7);
+    padding:3%;
+    font-size:8px;
+  }
+}
+
+.about_enjoy{
+  position: relative;
+  width:100%;
+  margin-top:10%;
+  display:flex;
+  justify-content: flex-end;
+}
+ .about_enjoy img{
+  width:60%;
+}
+/* たのしみ方　最大PC向け */
+@media screen and (min-width:1400px) and (max-width:1920px){
+ .about_enjoy h1{
+   font-weight: normal;
+   position: absolute;
+   top:15%;
+   left:15%;
+   background: linear-gradient(transparent 50%, #fff09a 50%);
+   color:black;
+   font-size: 48px;
+ }
+ .about_enjoy p{
+   position: absolute;
+   top:50%;
+   left:0%;
+   background-color:rgba(230,230,230,0.7);
+   padding:3%;
+   font-size: 28px;
+ }
+}
+/* たのしみ方 普通サイズPC向け */
+@media screen and (min-width:769px) and (max-width:1399px){
+  .about_enjoy h1{
+    font-weight: normal;
+    position: absolute;
+    top:15%;
+    left:15%;
+    background: linear-gradient(transparent 50%, #fff09a 50%);
+    color:black;
+    font-size: 32px;
+  }
+  .about_enjoy p{
+    position: absolute;
+    top:50%;
+    left:0%;
+    background-color:rgba(230,230,230,0.7);
+    padding:3%;
+    font-size: 14px;
+  }
+ }
+/* たのしみ方　スマホサイズ向け */
+@media screen and (max-width:768px){
+  .about_enjoy h1{
+    font-weight: normal;
+    position: absolute;
+    top:15%;
+    left:15%;
+    background: linear-gradient(transparent 50%, #fff09a 50%);
+    color:black;
+    font-size: 16px;
+  }
+  .about_enjoy p{
+    position: absolute;
+    top:50%;
+    left:0%;
+    background-color:rgba(230,230,230,0.7);
+    padding:3%;
+    font-size: 8px;
+  }
+ }
+
+/* merch */
+.main_merchandise{
+  background-color: #fff09a;
+  width:100%;
+  padding-bottom: 10%;
+  margin-top:10%;
+  position: relative;
+}
+/* 最大PC向け */
+ @media screen and (min-width:1400px) and (max-width:1920px){
+   .main_merchandise h1{
+     text-align: center;
+     margin-bottom: 3%;
+     font-weight: normal;
+     font-size: 48px;
+   }
+}
+
+/* 普通サイズPC向け */
+ @media screen and (min-width:769px) and (max-width:1399px){
+   .main_merchandise h1{
+     text-align: center;
+     margin-bottom: 3%;
+     font-weight: normal;
+     font-size: 32px;
+   }
+
+}
+
+/* スマホサイズ向け */
+ @media screen and (max-width:768px){
+   .main_merchandise h1{
+     text-align: center;
+     margin-bottom: 3%;
+     font-weight: normal;
+     font-size: 16px;
+   }
+
+}
+
+.merch_photo img{
+  transform: scale(0.7);
+  transition: 0.5s;
+  width:100%;
+}
+.merch_photo .slick-center{
+  transform: scale(1);
+}
+.viewmore img{
+  position: absolute;
+  top:75%;
+  right:5%;
+  width:30%;
+}
+
+/* photogallery */
+.main_photogallery{
+  width:100%;
+  margin-top:15%;
+  text-align: center;
+}
+.main_photogallery h1{
+  margin-bottom: 5%;
+  font-weight: normal;
+  display: inline-block;
+  background: linear-gradient(transparent 50%, #fff09a 50%);
+}
+.main_photogallery img{
+  width:100%;
+}
+
+/* footer */
+footer{
+  width:100%;
+  margin-top:20%;
+  position: relative;
+}
+footer img{
+  width:100%;
+  vertical-align: bottom;
+}
+footer ul{
+  width:100%;
+  position: absolute;
+  top:50%;
+  display:flex;
+  justify-content: center;
+}
+/* 最大PC向け */
+ @media screen and (min-width:1400px) and (max-width:1920px){
+   footer li{
+     display:block;
+     float:left;
+     margin:0 2%;
+     font-size: 24px;
+   }
+}
+
+/* 普通サイズPC向け */
+ @media screen and (min-width:769px) and (max-width:1399px){
+   footer li{
+     display:block;
+     float:left;
+     margin:0 2%;
+     font-size: 16px;
+   }
+}
+
+/* スマホサイズ向け */
+ @media screen and (max-width:768px){
+   footer li{
+     display:block;
+     float:left;
+     margin:0 2%;
+     font-size: 10px;
+   }
+}

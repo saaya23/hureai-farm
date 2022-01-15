@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>hureai-farm</title>
+   <meta charset="utf-8">
+   <link rel="stylesheet" href="css/hureaifarm.css">
+   <link rel="stylesheet" href="css/slick-theme.css">
+   <link rel="stylesheet" href="css/slick.css">
+   <!-- <meta name="viewport" contents="width=device-width"> -->
+ </head>
+
+ <body>
+  <div id="top">
+    <img src="img/top/cld.png" class="top_logo" alt="雲">
+    <a href="hureaifarm.html"><img src="img/top/logo.png" class="logo" alt="logo"></a>
+    <ul class="top_cont">
+      <li><img src="img/top/top1.jpg" alt="top画"></li>
+      <li><img src="img/top/top2.jpg" alt="top画"></li>
+      <li><img src="img/top/top3.jpg" alt="top画"></li>
+      <li><img src="img/top/top4.jpg" alt="top画"></li>
+      <li><img src="img/top/top5.jpg" alt="top画"></li>
+    </ul>
+    <img src="img/top/access_map.png" class="access_map" alt="map">
+    <img src="img/top/twitter.png" class="twitter" alt="twitter">
+    <img src="img/top/shop.png" class="shop" alt="shop">
+  </div>
+
+  <!-- motomoto !!!!!<div id="top">
+    <img src="img/top/top1.jpg" class="topphoto" alt="top画">
+    <a href="hureaifarm.html"><img src="img/top/logo.png" class="logo" alt="logo"></a>
+  </div> -->
+
+  <div class="navigation">
+    <img src="img/top/yellow base.png" class="yellow" alt="yellow">
+    <div class="icons">
+      <div class="icon farm">
+        <a href="aboutfarm.html"><img src="img/top/icon1.png" alt="牧場について"></a>
+      </div>
+      <div class="icon enjoy">
+        <a href="enjoy.html"><img src="img/top/icon2.png" alt="たのしみ方"></a>
+      </div>
+      <div class="icon merch">
+        <a href="merchandise.html"><img src="img/top/icon3.png" alt="商品"></a>
+      </div>
+      <div class="icon photo">
+        <a href="photogallery.html"><img src="img/top/icon4.png" alt="フォト"></a>
+      </div>
+    </div>
+   </div>
+
+   <div class="main_contents">
+     <div class="about_farm">
+       <img src="img/top/top_aboutfarm.jpg" alt="牧場の写真">
+       <a href="aboutfarm.html"><h1>牧場について</h1></a>
+       <p>ふれあい牧場は、動物達と身近にふれあえていつでも<br>来たくなる！老若男女どの世代でも楽しめ笑顔になれる
+         <br>そんな牧場を目指しています。<br>ご家族とのちょっとしたお散歩に気軽にお立ち寄りください。
+       </p>
+     </div>
+     <div class="about_enjoy">
+       <img src="img/top/enjoy.jpg" alt="牛の写真">
+       <a href="enjoy.html"><h1>たのしみ方</h1></a>
+       <p>たのしみ方いろいろ！ふれあい体験やもぐもぐ体験など<br>
+         毎月変わるイベント盛りだくさんです。<br>
+         園内には無料でご利用いただける広場やドッグラン、公園も！<br>
+         ピクニックやお昼寝も楽しめます。
+       </p>
+     </div>
+   </div>
+
+
+   <div class="main_merchandise">
+     <h1>商品紹介</h1>
+     <div class="merch_photo">
+       <img src="img/top/milk.png" alt="牛乳">
+       <img src="img/top/egg.png" alt="卵">
+       <img src="img/top/cheese.png" alt="チーズ">
+       <img src="img/top/ice.png" alt="アイス">
+       <img src="img/top/butter.png" alt="バター">
+       <img src="img/top/ravender.png" alt="ラベンダー">
+     </div>
+     <div class="viewmore">
+       <a href="merchandise.html"><img src="img/top/viewmore.png" alt="viewmore"></a>
+     </div>
+  </div>
+
+   <div class="main_photogallery">
+     <a href="photogallery.html"><h1>フォトギャラリー</h1></a>
+     <a href="photogallery.html"><img src="img/top/season.jpg" alt="春夏秋冬写真"></a>
+   </div>
+
+   <footer>
+     <img src="img/top/footer.png" alt="フッター">
+     <ul>
+       <li><a href="hureaifarm.html">TOPへ</a></li>
+       <li><a href="aboutfarm.html">牧場について</a></li>
+       <li><a href="enjoy.html">たのしみ方</a></li>
+       <li><a href="merchandise.html">商品紹介</a></li>
+       <li><a href="photogallery.html">フォトギャラリー</a></li>
+     </ul>
+   </footer>
+
+ <!-- javascript -->
+   <script src="js/jquery-3.6.0.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+   <script src="js/slick.min.js"></script>
+   <script src="js/hureaifarm.js"></script>
+
+ <script>
+ $(function(){
+    $(".main_photogallery img").on("mouseover",function(){
+      $(this).css("opacity",0.7);
+    });
+    $(".main_photogallery img").on("mouseout",function(){
+      $(this).css("opacity",1.0);
+    });
+ });
+ </script>
+
+ </body>
+
+</html>

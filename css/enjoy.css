@@ -1,0 +1,745 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing:border-box;
+  color:black;
+  font-weight: normal;
+}
+body{
+  font-family:小塚ゴシック Pr6N R;
+  width:100%;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.souvenir_photo p{
+  visibility: hidden;
+}
+
+/* header */
+header{
+  background-color:#D6FFFF;
+  position: relative;
+  width:100%;
+  position: fixed;
+  z-index: 1;
+  }
+header::before{
+  content:"";
+  display:inline-block;
+  padding-top:10%;
+}
+header img{
+  position: absolute;
+  top: 3%;
+  left: 1%;
+  width:8%;
+  float: left;
+}
+/* 最大PC向け */
+ @media screen and (min-width:1401px) and (max-width:1920px){
+   header li{
+     float:left;
+     margin-right: 5%;
+   }
+    header ul{
+      display:flex;
+      justify-content: flex-end;
+      position: absolute;
+      top: 30%;
+      left: 20%;
+      right: 2%;
+      font-size: 28px;
+    }
+ }
+
+ /* 普通サイズPC向け */
+  @media screen and (min-width:769px) and (max-width:1400px){
+    header li{
+      float:left;
+      margin-right: 5%;
+    }
+     header ul{
+       display:flex;
+       justify-content: flex-end;
+       position: absolute;
+       top: 30%;
+       left: 20%;
+       right: 2%;
+       font-size: 23px;
+     }
+ }
+
+/* ipadサイズ向け */
+ @media screen and (min-width:376px) and (max-width:768px){
+   /*　ハンバーガーボタン　*/
+   .hamburger {
+     display : block;
+     position: fixed;
+     z-index : 3;
+     right : 5%;
+     top   : 1%;
+     width : 10%;
+     height: 5%;
+     cursor: pointer;
+     text-align: center;
+   }
+   .hamburger span {
+     display : block;
+     position: absolute;
+     width   : 40%;
+     height  : 5%;
+     right   : 5%;
+     background : #555;
+     -webkit-transition: 0.3s ease-in-out;
+     -moz-transition   : 0.3s ease-in-out;
+     transition        : 0.3s ease-in-out;
+   }
+   .hamburger span:nth-child(1) {
+     top: 20%;
+   }
+   .hamburger span:nth-child(2) {
+     top: 35%;
+   }
+   .hamburger span:nth-child(3) {
+     top:50%;
+   }
+
+   /* ナビ開いてる時のボタン */
+   .hamburger.active span:nth-child(1) {
+     top : 3%;
+     -webkit-transform: rotate(-45deg);
+     -moz-transform   : rotate(-45deg);
+     transform        : rotate(-45deg);
+   }
+
+   .hamburger.active span:nth-child(2),
+   .hamburger.active span:nth-child(3) {
+     top: 3%;
+     -webkit-transform: rotate(45deg);
+     -moz-transform   : rotate(45deg);
+     transform        : rotate(45deg);
+   }
+
+   nav.menu {
+     position: fixed;
+     z-index : 2;
+     top  : 0;
+     left : 0;
+     color: #000;
+     background: #fff;
+     text-align: center;
+     transform: translateY(-100%);
+     transition: all 0.6s;
+     width: 100%;
+   }
+
+   nav.menu ul {
+       background-color:#D6FFFF;
+     margin: 0 auto;
+     padding: 0;
+     width: 100%;
+   }
+
+   nav.menu ul li {
+     list-style-type: none;
+     padding: 0;
+     width: 100%;
+   }
+   nav.menu ul li:hover:nth-child(1){
+     background :rgba(122, 201, 67, 50%);
+   }
+   nav.menu ul li:hover:nth-child(2){
+     background :rgba(255, 147, 30, 50%);
+   }
+   nav.menu ul li:hover:nth-child(3){
+     background :rgba(252, 238, 33, 50%);
+   }
+   nav.menu ul li:hover:nth-child(4){
+     background :rgba(74, 237, 255, 50%);
+   }
+
+   nav.menu ul li a {
+     display: block;
+     color: #000;
+     padding: 2% 0;
+   }
+
+   /* このクラスを、jQueryで付与・削除する */
+   nav.menu.active {
+     transform: translateY(0%);
+   }
+
+}
+
+/* スマホサイズ向け */
+@media screen and (max-width:375px){
+   /*　ハンバーガーボタン　*/
+   .hamburger {
+     display : block;
+     position: fixed;
+     z-index : 3;
+     right : 5%;
+     top   : 1%;
+     width : 10%;
+     height: 5%;
+     cursor: pointer;
+     text-align: center;
+   }
+   .hamburger span {
+     display : block;
+     position: absolute;
+     width   : 40%;
+     height  : 5%;
+     right   : 5%;
+     background : #555;
+     -webkit-transition: 0.3s ease-in-out;
+     -moz-transition   : 0.3s ease-in-out;
+     transition        : 0.3s ease-in-out;
+   }
+   .hamburger span:nth-child(1) {
+     top: 20%;
+   }
+   .hamburger span:nth-child(2) {
+     top: 35%;
+   }
+   .hamburger span:nth-child(3) {
+     top:50%;
+   }
+
+   /* ナビ開いてる時のボタン */
+   .hamburger.active span:nth-child(1) {
+     top : 3%;
+     -webkit-transform: rotate(-45deg);
+     -moz-transform   : rotate(-45deg);
+     transform        : rotate(-45deg);
+   }
+
+   .hamburger.active span:nth-child(2),
+   .hamburger.active span:nth-child(3) {
+     top: 3%;
+     -webkit-transform: rotate(45deg);
+     -moz-transform   : rotate(45deg);
+     transform        : rotate(45deg);
+   }
+
+   nav.menu {
+     position: fixed;
+     z-index : 2;
+     top  : 0;
+     left : 0;
+     color: #000;
+     background: #fff;
+     text-align: center;
+     transform: translateY(-100%);
+     transition: all 0.6s;
+     width: 100%;
+   }
+
+   nav.menu ul {
+       background-color:#D6FFFF;
+     margin: 0 auto;
+     padding: 0;
+     width: 100%;
+   }
+
+   nav.menu ul li {
+     list-style-type: none;
+     padding: 0;
+     width: 100%;
+   }
+   nav.menu ul li:hover:nth-child(1){
+     background :rgba(122, 201, 67, 50%);
+   }
+   nav.menu ul li:hover:nth-child(2){
+     background :rgba(255, 147, 30, 50%);
+   }
+   nav.menu ul li:hover:nth-child(3){
+     background :rgba(252, 238, 33, 50%);
+   }
+   nav.menu ul li:hover:nth-child(4){
+     background :rgba(74, 237, 255, 50%);
+   }
+
+   nav.menu ul li a {
+     display: block;
+     color: #000;
+     padding: 2% 0;
+   }
+
+   /* このクラスを、jQueryで付与・削除する */
+   nav.menu.active {
+     transform: translateY(0%);
+   }
+
+}
+
+
+.destination{
+  position: relative;
+}
+.title{
+  width:30%;
+  margin:12% 2%;
+  position: absolute;
+}
+
+.map_contents{
+  width:90%;
+  margin: 13% 5%;
+}
+
+.mark1{
+  position: absolute;
+  top:29%;
+  left:18%;
+  width:5%;
+}
+.mark2{
+  position: absolute;
+  top:29%;
+  left:24%;
+  width:5%;
+}
+.mark3{
+  position: absolute;
+  top:14%;
+  left:47%;
+  width:5%;
+}
+.mark4{
+  position: absolute;
+  top:37%;
+  left:10%;
+  width:5%;
+}
+.mark5{
+  position: absolute;
+  top:40%;
+  left:47%;
+  width:5%;
+}
+.mark6{
+  position: absolute;
+  top:65%;
+  left:14%;
+  width:5%;
+}
+.mark7{
+  position: absolute;
+  top:63%;
+  left:74%;
+  width:5%;
+}
+.mark8{
+  position: absolute;
+  top:60%;
+  left:46%;
+  width:5%;
+}
+
+/* how_enjoy */
+.how_enjoy{
+  background-color: #fff09a;
+  margin:0 3%;
+  border-radius: 30px;
+  padding:3% 5%;
+}
+.event{
+  position: relative;
+  width:100%;
+}
+.event_img{
+  text-align: center;
+}
+.event img{
+  width:30%;
+  padding-top:3%;
+  padding-bottom:3%;
+}
+
+
+
+/* 最大PC向け */
+ @media screen and (min-width:1400px) and (max-width:1920px){
+   .ex_p1{
+     position: absolute;
+     left:10%;
+     font-size: 28px;
+   }
+   .ex_p2{
+     position: absolute;
+     left:60%;
+     font-size: 28px;
+   }
+   #touch_ex h2{
+     margin:15% 0 5% 5%;
+     font-size:38px;
+   }
+   #meal_ex h2{
+     margin:15% 0 5% 5%;
+     font-size:38px;
+   }
+   #milking_ex h2{
+     margin:15% 0 5% 5%;
+     font-size:38px;
+   }
+   #handmade_ex h2{
+     margin:15% 0 5% 5%;
+     font-size:38px;
+   }
+}
+
+/* 普通サイズPC向け */
+ @media screen and (min-width:769px) and (max-width:1399px){
+   .ex_p1{
+     position: absolute;
+     left:10%;
+     font-size: 16px;
+   }
+   .ex_p2{
+     position: absolute;
+     left:60%;
+     font-size: 16px;
+   }
+   #touch_ex h2{
+     margin:15% 0 5% 5%;
+     font-size:28px;
+   }
+   #meal_ex h2{
+     margin:15% 0 5% 5%;
+     font-size:28px;
+   }
+   #milking_ex h2{
+     margin:15% 0 5% 5%;
+     font-size:28px;
+   }
+   #handmade_ex h2{
+     margin:15% 0 5% 5%;
+     font-size:28px;
+   }
+}
+
+/* スマホサイズ向け */
+ @media screen and (max-width:768px){
+   .ex_p1{
+     position: absolute;
+     left:10%;
+     font-size: 8px;
+   }
+   .ex_p2{
+     position: absolute;
+     left:60%;
+     font-size: 8px;
+   }
+   #touch_ex h2{
+     margin:15% 0 5% 5%;
+     font-size:16px;
+   }
+   #meal_ex h2{
+     margin:15% 0 5% 5%;
+     font-size:16px;
+   }
+   #milking_ex h2{
+     margin:15% 0 5% 5%;
+     font-size:16px;
+   }
+   #handmade_ex h2{
+     margin:15% 0 5% 5%;
+     font-size:16px;
+   }
+}
+
+/* ふれあい体験 */
+#touch_ex{
+  position: relative;
+  width:100%;
+}
+#touch_ex img{
+  width:100%;
+}
+
+/* 最大PC向け */
+ @media screen and (min-width:1400px) and (max-width:1920px){
+   #touch_ex p{
+     position: absolute;
+     top:17%;
+     left:57%;
+     font-size: 23px;
+   }
+}
+
+/* 普通サイズPC向け */
+ @media screen and (min-width:769px) and (max-width:1399px){
+   #touch_ex p{
+     position: absolute;
+     top:18%;
+     left:58%;
+     font-size: 13px;
+   }
+}
+
+/* スマホサイズ向け */
+ @media screen and (max-width:768px){
+   #touch_ex p{
+     position: absolute;
+     top:15%;
+     left:58%;
+     font-size: 6px;
+   }
+}
+
+/* もぐもぐ体験 */
+#meal_ex{
+  position: relative;
+  width:100%;
+}
+#meal_ex img{
+  width:100%;
+}
+/* 最大PC向け */
+ @media screen and (min-width:1400px) and (max-width:1920px){
+   #meal_ex p{
+     position: absolute;
+     top:17%;
+     left:57%;
+     font-size: 23px;
+   }
+}
+
+/* 普通サイズPC向け */
+ @media screen and (min-width:769px) and (max-width:1399px){
+   #meal_ex p{
+     position: absolute;
+     top:18%;
+     left:58%;
+     font-size: 13px;
+   }
+}
+
+/* スマホサイズ向け */
+ @media screen and (max-width:768px){
+   #meal_ex p{
+     position: absolute;
+     top:15%;
+     left:58%;
+     font-size: 6px;
+   }
+}
+
+/* 搾乳体験 */
+#milking_ex{
+  position:relative;
+  width:100%;
+}
+#milking_ex img{
+  width:50%;
+}
+/* 最大PC向け */
+ @media screen and (min-width:1400px) and (max-width:1920px){
+   #milking_ex p{
+     position: absolute;
+     top:25%;
+     left:57%;
+     font-size: 23px;
+   }
+}
+
+/* 普通サイズPC向け */
+ @media screen and (min-width:769px) and (max-width:1399px){
+   #milking_ex p{
+     position: absolute;
+     top:20%;
+     left:58%;
+     font-size: 13px;
+   }
+}
+
+/* スマホサイズ向け */
+ @media screen and (max-width:768px){
+   #milking_ex p{
+     position: absolute;
+     top:17%;
+     left:58%;
+     font-size: 6px;
+   }
+}
+
+/* 手作り体験 */
+#handmade_ex{
+  position: relative;
+  width:100%;
+}
+#handmade_ex img{
+  width:100%;
+}
+/* 最大PC向け */
+ @media screen and (min-width:1400px) and (max-width:1920px){
+   .made_1{
+     position: absolute;
+     top:25%;
+     left:57%;
+     font-size: 23px;
+   }
+   .made_2{
+     position: absolute;
+     top:75%;
+     left:4%;
+     font-size: 23px;
+   }
+}
+
+/* 普通サイズPC向け */
+ @media screen and (min-width:769px) and (max-width:1399px){
+   .made_1{
+     position: absolute;
+     top:20%;
+     left:58%;
+     font-size: 13px;
+   }
+   .made_2{
+     position: absolute;
+     top:75%;
+     left:4%;
+     font-size: 13px;
+   }
+}
+
+/* スマホサイズ向け */
+ @media screen and (max-width:768px){
+   .made_1{
+     position: absolute;
+     top:17%;
+     left:58%;
+     font-size: 6px;
+   }
+   .made_2{
+     position: absolute;
+     top:75%;
+     left:4%;
+     font-size: 6px;
+   }
+}
+
+/* freespace */
+#freespace{
+  background-color: #fff09a;
+  margin:5% 3%;
+  border-radius: 30px;
+  padding:3% 5%;
+}
+#freespace h2{
+  text-align: center;
+  padding-bottom: 3%;
+}
+#freespace ul{
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.free_photo{
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.free_photo img{
+  width:30%;
+}
+
+/* souvenir */
+#souvenirs{
+  background-color: #fff09a;
+  margin:5% 3%;
+  border-radius: 30px;
+  padding:3% 5%;
+}
+#souvenirs h2{
+  text-align: center;
+  padding-bottom: 3%;
+}
+.souvenir_photo{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.souvenir{
+  width: 50%;
+}
+.souvenir img{
+  width:100%;
+  padding: 1%;
+}
+.photo1 p{
+  position: absolute;
+  top:10%;
+  left:10%;
+}
+.photo2 p{
+  position: absolute;
+  top:10%;
+  left:60%;
+}
+.photo3 p{
+  position: absolute;
+  top:60%;
+  left:10%;
+}
+.photo4 p{
+  position: absolute;
+  top:60%;
+  left:60%;
+}
+/* return */
+.return img{
+  float:right;
+  width:5%;
+}
+
+/* footer */
+footer{
+  width:100%;
+  margin-top:20%;
+  position: relative;
+}
+footer img{
+  width:100%;
+}
+footer ul{
+  width:100%;
+  position: absolute;
+  top:50%;
+  display:flex;
+  justify-content: center;
+}
+/* 最大PC向け */
+ @media screen and (min-width:1400px) and (max-width:1920px){
+   footer li{
+     display:block;
+     float:left;
+     margin:0 2%;
+     font-size: 24px;
+   }
+}
+
+/* 普通サイズPC向け */
+ @media screen and (min-width:769px) and (max-width:1399px){
+   footer li{
+     display:block;
+     float:left;
+     margin:0 2%;
+     font-size: 16px;
+   }
+}
+
+/* スマホサイズ向け */
+ @media screen and (max-width:768px){
+   footer li{
+     display:block;
+     float:left;
+     margin:0 2%;
+     font-size: 10px;
+   }
+}

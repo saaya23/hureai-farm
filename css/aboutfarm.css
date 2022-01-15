@@ -1,0 +1,628 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing:border-box;
+  color:black;
+  font-weight: normal;
+}
+body{
+  font-family:小塚ゴシック Pr6N R;
+  width:100%;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+/* header */
+header{
+  background-color:#D6FFFF;
+  position: relative;
+  width:100%;
+  position: fixed;
+  z-index: 1;
+  }
+header::before{
+  content:"";
+  display:inline-block;
+  padding-top:10%;
+}
+header img{
+  position: absolute;
+  top: 3%;
+  left: 1%;
+  width:8%;
+  float: left;
+}
+/* 最大PC向け */
+ @media screen and (min-width:1401px) and (max-width:1920px){
+   header li{
+     float:left;
+     margin-right: 5%;
+   }
+    header ul{
+      display:flex;
+      justify-content: flex-end;
+      position: absolute;
+      top: 30%;
+      left: 20%;
+      right: 2%;
+      font-size: 28px;
+    }
+ }
+
+ /* 普通サイズPC向け */
+  @media screen and (min-width:769px) and (max-width:1400px){
+    header li{
+      float:left;
+      margin-right: 5%;
+    }
+     header ul{
+       display:flex;
+       justify-content: flex-end;
+       position: absolute;
+       top: 30%;
+       left: 20%;
+       right: 2%;
+       font-size: 23px;
+     }
+ }
+
+/* ipadサイズ向け */
+ @media screen and (min-width:376px) and (max-width:768px){
+   /*　ハンバーガーボタン　*/
+   .hamburger {
+     display : block;
+     position: fixed;
+     z-index : 3;
+     right : 5%;
+     top   : 1%;
+     width : 10%;
+     height: 5%;
+     cursor: pointer;
+     text-align: center;
+   }
+   .hamburger span {
+     display : block;
+     position: absolute;
+     width   : 40%;
+     height  : 5%;
+     right   : 5%;
+     background : #555;
+     -webkit-transition: 0.3s ease-in-out;
+     -moz-transition   : 0.3s ease-in-out;
+     transition        : 0.3s ease-in-out;
+   }
+   .hamburger span:nth-child(1) {
+     top: 20%;
+   }
+   .hamburger span:nth-child(2) {
+     top: 35%;
+   }
+   .hamburger span:nth-child(3) {
+     top:50%;
+   }
+
+   /* ナビ開いてる時のボタン */
+   .hamburger.active span:nth-child(1) {
+     top : 3%;
+     -webkit-transform: rotate(-45deg);
+     -moz-transform   : rotate(-45deg);
+     transform        : rotate(-45deg);
+   }
+
+   .hamburger.active span:nth-child(2),
+   .hamburger.active span:nth-child(3) {
+     top: 3%;
+     -webkit-transform: rotate(45deg);
+     -moz-transform   : rotate(45deg);
+     transform        : rotate(45deg);
+   }
+
+   nav.menu {
+     position: fixed;
+     z-index : 2;
+     top  : 0;
+     left : 0;
+     color: #000;
+     background: #fff;
+     text-align: center;
+     transform: translateY(-100%);
+     transition: all 0.6s;
+     width: 100%;
+   }
+
+   nav.menu ul {
+       background-color:#D6FFFF;
+     margin: 0 auto;
+     padding: 0;
+     width: 100%;
+   }
+
+   nav.menu ul li {
+     list-style-type: none;
+     padding: 0;
+     width: 100%;
+   }
+   nav.menu ul li:hover:nth-child(1){
+     background :rgba(122, 201, 67, 50%);
+   }
+   nav.menu ul li:hover:nth-child(2){
+     background :rgba(255, 147, 30, 50%);
+   }
+   nav.menu ul li:hover:nth-child(3){
+     background :rgba(252, 238, 33, 50%);
+   }
+   nav.menu ul li:hover:nth-child(4){
+     background :rgba(74, 237, 255, 50%);
+   }
+
+   nav.menu ul li a {
+     display: block;
+     color: #000;
+     padding: 2% 0;
+   }
+
+   /* このクラスを、jQueryで付与・削除する */
+   nav.menu.active {
+     transform: translateY(0%);
+   }
+
+}
+
+/* スマホサイズ向け */
+@media screen and (max-width:375px){
+   /*　ハンバーガーボタン　*/
+   .hamburger {
+     display : block;
+     position: fixed;
+     z-index : 3;
+     right : 5%;
+     top   : 1%;
+     width : 10%;
+     height: 5%;
+     cursor: pointer;
+     text-align: center;
+   }
+   .hamburger span {
+     display : block;
+     position: absolute;
+     width   : 40%;
+     height  : 5%;
+     right   : 5%;
+     background : #555;
+     -webkit-transition: 0.3s ease-in-out;
+     -moz-transition   : 0.3s ease-in-out;
+     transition        : 0.3s ease-in-out;
+   }
+   .hamburger span:nth-child(1) {
+     top: 20%;
+   }
+   .hamburger span:nth-child(2) {
+     top: 35%;
+   }
+   .hamburger span:nth-child(3) {
+     top:50%;
+   }
+
+   /* ナビ開いてる時のボタン */
+   .hamburger.active span:nth-child(1) {
+     top : 3%;
+     -webkit-transform: rotate(-45deg);
+     -moz-transform   : rotate(-45deg);
+     transform        : rotate(-45deg);
+   }
+
+   .hamburger.active span:nth-child(2),
+   .hamburger.active span:nth-child(3) {
+     top: 3%;
+     -webkit-transform: rotate(45deg);
+     -moz-transform   : rotate(45deg);
+     transform        : rotate(45deg);
+   }
+
+   nav.menu {
+     position: fixed;
+     z-index : 2;
+     top  : 0;
+     left : 0;
+     color: #000;
+     background: #fff;
+     text-align: center;
+     transform: translateY(-100%);
+     transition: all 0.6s;
+     width: 100%;
+   }
+
+   nav.menu ul {
+       background-color:#D6FFFF;
+     margin: 0 auto;
+     padding: 0;
+     width: 100%;
+   }
+
+   nav.menu ul li {
+     list-style-type: none;
+     padding: 0;
+     width: 100%;
+   }
+   nav.menu ul li:hover:nth-child(1){
+     background :rgba(122, 201, 67, 50%);
+   }
+   nav.menu ul li:hover:nth-child(2){
+     background :rgba(255, 147, 30, 50%);
+   }
+   nav.menu ul li:hover:nth-child(3){
+     background :rgba(252, 238, 33, 50%);
+   }
+   nav.menu ul li:hover:nth-child(4){
+     background :rgba(74, 237, 255, 50%);
+   }
+
+   nav.menu ul li a {
+     display: block;
+     color: #000;
+     padding: 2% 0;
+   }
+
+   /* このクラスを、jQueryで付与・削除する */
+   nav.menu.active {
+     transform: translateY(0%);
+   }
+
+}
+
+/* daiまとめ */
+/* 最大PC向け */
+ @media screen and (min-width:1401px) and (max-width:1920px){
+   .about_farm h1{
+     padding:20% 0% 5% 0%;
+     text-align: center;
+     font-size: 32px;
+   }
+   .friends h5{
+     padding-top:5%;
+     text-align: center;
+     font-size: 22px;
+   }
+   .friends h1{
+     text-align: center;
+     font-size: 32px;
+     margin-bottom: 5%;
+   }
+   .access_p p{
+     margin: 5% 0% 5% 3%;
+     color: #fff;
+     font-size: 24px;
+   }
+}
+
+/* 普通サイズPC向け */
+ @media screen and (min-width:769px) and (max-width:1400px){
+   /* dai*/
+   .about_farm h1{
+     padding:20% 0% 5% 0%;
+     text-align: center;
+     font-size: 22px;
+   }
+   .friends h5{
+     padding-top:5%;
+     text-align: center;
+     font-size: 12px;
+   }
+   .friends h1{
+     text-align: center;
+     font-size: 22px;
+     margin-bottom: 5%;
+   }
+   .access_p p{
+     margin: 5% 0% 5% 3%;
+     color: #fff;
+     font-size: 17px;
+   }
+}
+
+/* ipadサイズ向け */
+ @media screen and (min-width:376px) and (max-width:768px){
+
+   /* dai*/
+   .about_farm h1{
+     padding:20% 0% 5% 0%;
+     text-align: center;
+     font-size: 12px;
+   }
+   .friends h5{
+     padding-top:5%;
+     text-align: center;
+     font-size: 8px;
+   }
+   .friends h1{
+     text-align: center;
+     font-size: 12px;
+     margin-bottom: 5%;
+   }
+   .access_p p{
+     margin: 5% 0% 5% 3%;
+     color: #fff;
+     font-size: 10px;
+   }
+}
+/* スマホサイズ向け */
+ @media screen and (max-width:375px){
+   /* dai*/
+   .about_farm h1{
+     padding:20% 0% 5% 0%;
+     text-align: center;
+     font-size: 12px;
+   }
+   .friends h5{
+     padding-top:5%;
+     text-align: center;
+     font-size: 8px;
+   }
+   .friends h1{
+     text-align: center;
+     font-size: 12px;
+     margin-bottom: 5%;
+   }
+   .access_p p{
+     margin: 5% 0% 5% 3%;
+     color: #fff;
+     font-size: 10px;
+   }
+}
+
+/* details */
+.details{
+  display:flex;
+  flex-wrap: wrap; /*折り返す */
+  width:100%;
+  position: relative;
+}
+.details img{
+  width:50%;
+}
+
+/* 最大PC向け */
+ @media screen and (min-width:1401px) and (max-width:1920px){
+   .letter1{
+     position: absolute;
+     top:35%;
+     left:15%;
+     font-size: 18px;
+   }
+
+   .letter2{
+     position: absolute;
+     top:5%;
+     left:55%;
+     font-size: 18px;
+   }
+
+   .letter3{
+     position: absolute;
+     top:55%;
+     left:4%;
+     font-size: 18px;
+   }
+
+   .letter4{
+     position: absolute;
+     top:85%;
+     left:60%;
+     font-size: 18px;
+   }
+}
+
+/* 普通サイズPC向け */
+ @media screen and (min-width:769px) and (max-width:1400px){
+   .letter1{
+     position: absolute;
+     top:35%;
+     left:15%;
+     font-size: 14px;
+   }
+
+   .letter2{
+     position: absolute;
+     top:5%;
+     left:55%;
+     font-size: 14px;
+   }
+
+   .letter3{
+     position: absolute;
+     top:55%;
+     left:4%;
+     font-size: 14px;
+   }
+
+   .letter4{
+     position: absolute;
+     top:85%;
+     left:60%;
+     font-size: 14px;
+   }
+}
+
+/* ipadサイズ向け */
+ @media screen and (min-width:376px) and (max-width:768px){
+   .letter1{
+     position: absolute;
+     top:35%;
+     left:5%;
+     font-size: 8px;
+   }
+
+   .letter2{
+     position: absolute;
+     top:5%;
+     left:52%;
+     font-size: 8px;
+   }
+
+   .letter3{
+     position: absolute;
+     top:55%;
+     left:1%;
+     font-size: 8px;
+   }
+
+   .letter4{
+     position: absolute;
+     top:85%;
+     left:52%;
+     font-size: 8px;
+   }
+}
+/* スマホサイズ向け */
+ @media screen and (max-width:375px){
+   .letter1{
+     position: absolute;
+     top:35%;
+     left:5%;
+     font-size: 8px;
+   }
+
+   .letter2{
+     position: absolute;
+     top:5%;
+     left:52%;
+     font-size: 8px;
+   }
+
+   .letter3{
+     position: absolute;
+     top:55%;
+     left:1%;
+     font-size: 8px;
+   }
+
+   .letter4{
+     position: absolute;
+     top:85%;
+     left:52%;
+     font-size: 8px;
+   }
+}
+
+/* friends photp */
+.friends{
+  width:100%;
+}
+.friends_photo img{
+  width:25%;
+}
+.ani_top{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+.ani_mid{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  margin: 3% 0;
+}
+.ani_end{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+
+/* access */
+.access{
+  width:100%;
+  position: relative;
+  margin-top: 15%;
+}
+.access_theme img{
+  position:absolute;
+  top:-5%;
+  left:25%;
+  width:50%;
+}
+.access_img{
+  text-align: center;
+}
+.access_img img{
+  width:90%;
+}
+.access_p{
+  position: absolute;
+  top:10%;
+  left:10%;
+  bottom:10%;
+  width:80%;
+  padding:10% 0%;
+  background-color: rgba(26, 26, 26, 0.5);
+}
+.access_map iframe{
+  position: absolute;
+  top:25%;
+  left:44%;
+  width:43%;
+  height:50%;
+}
+
+
+
+
+
+/* footer */
+footer{
+  width:100%;
+  margin-top:20%;
+  position: relative;
+}
+footer img{
+  width:100%;
+  vertical-align: bottom;
+}
+footer ul{
+  width:100%;
+  position: absolute;
+  top:50%;
+  display:flex;
+  justify-content: center;
+}
+/* 最大PC向け */
+ @media screen and (min-width:1401px) and (max-width:1920px){
+   footer li{
+     display:block;
+     float:left;
+     margin:0 2%;
+     font-size: 24px;
+   }
+}
+
+/* 普通サイズPC向け */
+ @media screen and (min-width:769px) and (max-width:1400px){
+   footer li{
+     display:block;
+     float:left;
+     margin:0 2%;
+     font-size: 16px;
+   }
+}
+
+/* ipadサイズ向け */
+ @media screen and (min-width:376px) and (max-width:768px){
+   footer li{
+     display:block;
+     float:left;
+     margin:0 2%;
+     font-size: 10px;
+   }
+}
+/* スマホサイズ向け */
+ @media screen and (max-width:375px){
+   footer li{
+     display:block;
+     float:left;
+     margin:0 2%;
+     font-size: 10px;
+   }
+}
